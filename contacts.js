@@ -48,7 +48,7 @@ async function addContact(name, email, phone) {
     const contacts = await JSON.parse((await fs.readFile(contactsPath)).toString());
     contacts.push(newContact);
     await fs.writeFile(contactsPath, JSON.stringify(contacts, null, 2));
-    console.table(contacts);
+    listContacts();
 }
 module.exports = {
     listContacts,
